@@ -9,6 +9,7 @@ import Foundation
 import CoreImage
 import ArgumentParser
 import ObjectiveC
+import FrameMeCore
 
 @main
 struct FrameMe: ParsableCommand {
@@ -47,9 +48,8 @@ struct FrameMe: ParsableCommand {
             }
 
             // Load the composite class.
-            let compTool = CompositeImage()
-            compTool.noClip = noClip
-            compTool.skipContentBox = skipContentBox
+            let compTool = CompositeImage(
+                skipContentBox: skipContentBox, noClip: noClip)
 
             // Parse files
             let filesToProcess = parseInputFiles()
