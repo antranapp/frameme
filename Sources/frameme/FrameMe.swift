@@ -80,7 +80,7 @@ struct FrameMe: ParsableCommand {
                 outputUrl.appendPathComponent(outputFilename)
 
                 // Make it!
-                let outputFile = compTool.create(frame: frameImage, screenshot: screenshot)
+                let outputFile = compTool.create(deviceFrame: frameImage, screenshot: screenshot)
                 if outputFile?.writeAsPng(outputUrl) ?? false {
                     // Worked!
                     Logger.success("> Saved to <\(outputUrl.path)>")
